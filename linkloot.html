@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited-Time Offers: Amazon Jobs & Exclusive Gift Cards | Claim Yours Today</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF9900;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-top: 0.2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 3rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 span {
+            color: #FF9900;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .countdown {
+            background-color: rgba(255, 153, 0, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .countdown h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .timer {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF9900;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #FF9900;
+            color: #232f3e;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffad33;
+            transform: scale(1.05);
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            border: 2px solid #FF9900;
+            color: #FF9900;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(255, 153, 0, 0.1);
+        }
+        
+        /* Offers Section */
+        .offers {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: #232f3e;
+        }
+        
+        .section-title p {
+            color: #666;
+        }
+        
+        .offer-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .offer-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .offer-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .offer-badge {
+            background-color: #FF9900;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .offer-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .offer-content {
+            padding: 1.5rem;
+        }
+        
+        .offer-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #232f3e;
+        }
+        
+        .offer-payout {
+            color: #FF9900;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .offer-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 3rem 0;
+            background-color: #fafafa;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: #FF9900;
+            opacity: 0.3;
+            position: absolute;
+            left: -0.5rem;
+            top: -1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 1rem;
+            background-size: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            color: #232f3e;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* How It Works */
+        .steps {
+            padding: 3rem 0;
+            background-color: #232f3e;
+            color: white;
+        }
+        
+        .step-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+        
+        .step-card {
+            padding: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: #FF9900;
+            color: #232f3e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-card p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 3rem 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 1rem;
+            background-color: #f5f5f5;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #131A22;
+            color: #ddd;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            margin: 0 1rem;
+            color: #999;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #FF9900;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .offer-cards, .testimonial-cards, .step-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo">LinkLoot</div>
+                    <div class="tagline">Exclusive Deals & Limited-Time Offers</div>
+                </div>
+                <a href="#offers" class="cta-button">View Offers</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Claim Your <span>Exclusive Offers</span> Today</h1>
+            <p>Limited-time opportunities including Amazon jobs, gift cards, cash prizes and more. Don't miss out!</p>
+            
+            <div class="countdown">
+                <h3>OFFERS EXPIRE IN:</h3>
+                <div class="timer" id="countdown">23:59:59</div>
+            </div>
+            
+            <div>
+                <a href="#offers" class="cta-button">See Available Offers</a>
+                <a href="#how-it-works" class="cta-button secondary-button">How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers" id="offers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Today's Top Offers</h2>
+                <p>Select any offer below to get started</p>
+            </div>
+            
+            <div class="offer-cards">
+                <!-- Amazon Jobs Offer -->
+                <div class="offer-card">
+                    <div class="offer-badge">HOT OFFER</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-content">
+                        <h3>Amazon Work From Home Jobs</h3>
+                        <span class="offer-payout">Earn $25-35/hr</span>
+                        <p class="offer-description">Limited openings for remote customer service positions with Amazon. No experience required for some roles.</p>
+                        <a href="https://www.gn3atrk.com/27TN4HML/4QX811T/" class="cta-button">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- PrizeStash Offer -->
+                <div class="offer-card">
+                    <div class="offer-badge">NEW</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-content">
+                        <h3>PrizeStash Instant Wins</h3>
+                        <span class="offer-payout">$500+ Daily Prizes</span>
+                        <p class="offer-description">Claim your free entries to win gift cards, cash prizes and electronics. New winners every hour!</p>
+                        <a href="https://www.gn3atrk.com/27TN4HML/35KJ2D9J/" class="cta-button">Play Now</a>
+                    </div>
+                </div>
+                
+                <!-- Gift Card Offer -->
+                <div class="offer-card">
+                    <div class="offer-badge">POPULAR</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-content">
+                        <h3>$500 Walmart Gift Card</h3>
+                        <span class="offer-payout">Free Giveaway</span>
+                        <p class="offer-description">Complete quick survey for chance to win $500 Walmart gift card. New winners selected daily.</p>
+                        <a href="https://squaredownloads.com/1780874" class="cta-button">Claim Entry</a>
+                    </div>
+                </div>
+                
+                <!-- Additional Offer -->
+                <div class="offer-card">
+                    <div class="offer-badge">LIMITED</div>
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="offer-content">
+                        <h3>Free iPhone 15 Pro</h3>
+                        <span class="offer-payout">Valued at $999</span>
+                        <p class="offer-description">Special promotion giving away 10 iPhone 15 Pro devices this week. No purchase necessary.</p>
+                        <a href="https://squaredownloads.com/1772773" class="cta-button">Enter Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Real people getting real results</p>
+            </div>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I got approved for the Amazon work from home job in just 3 days! Now I'm making $28/hour while taking care of my kids at home. Life changing!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Sarah M.</h4>
+                            <p>Amazon CSR, Texas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I was skeptical at first but I actually won a $250 Amazon gift card on my second try with PrizeStash. Already used it for Christmas shopping!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                        <div class="author-info">
+                            <h4>James L.</h4>
+                            <p>Winner, Ohio</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The application process was so simple. Within a week I had interview requests from 3 different Amazon departments. Start next Monday!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Danielle R.</h4>
+                            <p>New Hire, Florida</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="steps" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">How It Works</h2>
+                <p style="color: #ccc;">Simple steps to claim your offer</p>
+            </div>
+            
+            <div class="step-cards">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Choose Your Offer</h3>
+                    <p>Select from our verified offers above</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Complete Simple Steps</h3>
+                    <p>Follow the easy application process</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Approved</h3>
+                    <p>Receive confirmation within 24-48 hours</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Start Earning</h3>
+                    <p>Begin working or claim your prize</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are these offers really free?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All offers shown are completely free to apply for. Some may require you to complete a simple survey or sign up for a free account, but there are no hidden costs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly can I start the Amazon job?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most applicants receive a response within 3 business days. The hiring process typically takes 1-2 weeks from application to start date depending on position availability.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are my chances of winning prizes?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our partners select new winners daily. While we can't guarantee everyone will win, your chances increase with each additional entry you qualify for.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my personal information secure?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We only work with trusted partners who comply with all data protection regulations. Your information is never sold to third parties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="steps" style="background-color: #FF9900; color: #232f3e; padding: 2rem 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Don't Miss These Limited-Time Offers</h2>
+            <p style="margin-bottom: 1.5rem; color: #232f3e; font-weight: bold;">Click below to claim your preferred offer before time runs out!</p>
+            <a href="#offers" class="cta-button" style="background-color: #232f3e; color: white;">View All Offers Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#offers">Offers</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 LinkLoot. All rights reserved. This is not an official Amazon website.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.classList.contains('show');
+                
+                // Close all answers first
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.classList.remove('show');
+                });
+                
+                // Toggle this one if it wasn't open
+                if (!isOpen) {
+                    answer.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
