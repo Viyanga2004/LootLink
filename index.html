@@ -3,39 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limited-Time Offers: Amazon Jobs & Exclusive Gift Cards | Claim Yours Today</title>
+    <title>Premium Affiliate Offers - Maximize Your Earnings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
+        /* Global Styles */
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #f97316;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #f1f5f9;
+            color: var(--dark);
             line-height: 1.6;
         }
         
-        a {
-            text-decoration: none;
-            color: inherit;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         /* Header Styles */
         header {
-            background-color: #232f3e;
+            background: linear-gradient(135deg, var(--primary), #6366f1);
             color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 100;
         }
         
         .header-content {
@@ -45,682 +54,584 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 24px;
             font-weight: 700;
-            color: #FF9900;
+            display: flex;
+            align-items: center;
         }
         
-        .tagline {
-            font-size: 0.9rem;
-            color: #ddd;
-            margin-top: 0.2rem;
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
         }
         
-        /* Hero Section */
-        .hero {
-            padding: 3rem 0;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        .ip-display {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ip-display i {
+            margin-right: 8px;
+            color: var(--warning);
+        }
+        
+        /* Announcement Banner */
+        .announcement-banner {
+            background: linear-gradient(to right, #f59e0b, #f97316);
             color: white;
+            padding: 15px;
             text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
         
-        .hero h1 {
+        .announcement-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .announcement-banner:hover::before {
+            left: 100%;
+        }
+        
+        .announcement-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .banner-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .banner-text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .banner-text span {
+            font-weight: 800;
+            text-decoration: underline;
+        }
+        
+        /* Main Content */
+        .main-title {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .main-title h1 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
         }
         
-        .hero h1 span {
-            color: #FF9900;
+        .main-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
         }
         
-        .hero p {
-            font-size: 1.2rem;
+        .main-title p {
+            color: #64748b;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
         }
         
-        .countdown {
-            background-color: rgba(255, 153, 0, 0.2);
-            padding: 1rem;
-            border-radius: 5px;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        .countdown h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .timer {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FF9900;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #FF9900;
-            color: #232f3e;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            margin: 0.5rem;
-        }
-        
-        .cta-button:hover {
-            background-color: #ffad33;
-            transform: scale(1.05);
-        }
-        
-        .secondary-button {
-            background-color: transparent;
-            border: 2px solid #FF9900;
-            color: #FF9900;
-        }
-        
-        .secondary-button:hover {
-            background-color: rgba(255, 153, 0, 0.1);
-        }
-        
-        /* Offers Section */
-        .offers {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: #232f3e;
-        }
-        
-        .section-title p {
-            color: #666;
-        }
-        
-        .offer-cards {
+        /* Offers Grid */
+        .offers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
         }
         
         .offer-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
         }
         
         .offer-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
         
         .offer-badge {
-            background-color: #FF9900;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--success);
             color: white;
-            padding: 0.3rem 0.8rem;
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: bold;
-            border-radius: 0 0 5px 5px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
         }
         
         .offer-image {
             height: 180px;
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .offer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .offer-card:hover .offer-image img {
+            transform: scale(1.05);
         }
         
         .offer-content {
-            padding: 1.5rem;
+            padding: 20px;
         }
         
-        .offer-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #232f3e;
+        .offer-category {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
         
-        .offer-payout {
-            color: #FF9900;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            display: block;
+        .offer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
         }
         
         .offer-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 15px;
         }
         
-        /* Testimonials */
-        .testimonials {
-            padding: 3rem 0;
-            background-color: #fafafa;
-        }
-        
-        .testimonial-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .testimonial-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: #FF9900;
-            opacity: 0.3;
-            position: absolute;
-            left: -0.5rem;
-            top: -1rem;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin-right: 1rem;
-            background-size: cover;
-        }
-        
-        .author-info h4 {
-            font-size: 1rem;
-            color: #232f3e;
-        }
-        
-        .author-info p {
-            font-size: 0.8rem;
-            color: #666;
-        }
-        
-        /* How It Works */
-        .steps {
-            padding: 3rem 0;
-            background-color: #232f3e;
-            color: white;
-        }
-        
-        .step-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
-        }
-        
-        .step-card {
-            padding: 1.5rem;
-        }
-        
-        .step-number {
-            background-color: #FF9900;
-            color: #232f3e;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-        
-        .step-card h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .step-card p {
-            color: #ccc;
-            font-size: 0.9rem;
-        }
-        
-        /* FAQ */
-        .faq {
-            padding: 3rem 0;
-        }
-        
-        .faq-item {
-            background-color: white;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .faq-question {
-            padding: 1rem;
-            background-color: #f5f5f5;
-            font-weight: bold;
-            cursor: pointer;
+        .offer-stats {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        
+        .offer-stat {
+            display: flex;
             align-items: center;
+            color: #64748b;
         }
         
-        .faq-answer {
-            padding: 1rem;
-            display: none;
+        .offer-stat i {
+            margin-right: 5px;
+            color: var(--primary);
         }
         
-        .faq-answer.show {
+        .offer-button {
             display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .offer-button:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
         }
         
         /* Footer */
         footer {
-            background-color: #131A22;
-            color: #ddd;
-            padding: 2rem 0;
-            text-align: center;
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
         }
         
         .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
         }
         
         .footer-links a {
-            margin: 0 1rem;
-            color: #999;
-            transition: color 0.3s;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
         }
         
         .footer-links a:hover {
-            color: #FF9900;
+            color: white;
         }
         
-        .copyright {
-            font-size: 0.9rem;
-            color: #999;
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
         }
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
             }
             
-            .hero h1 {
-                font-size: 1.8rem;
+            .logo {
+                margin-bottom: 15px;
             }
             
-            .offer-cards, .testimonial-cards, .step-cards {
+            .main-title h1 {
+                font-size: 2rem;
+            }
+            
+            .banner-content {
+                flex-direction: column;
+            }
+            
+            .banner-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .ip-display {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .banner-text {
+                font-size: 16px;
+            }
+            
+            .offers-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with IP Display -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div>
-                    <div class="logo">LinkLoot</div>
-                    <div class="tagline">Exclusive Deals & Limited-Time Offers</div>
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Loot Links</span>
                 </div>
-                <a href="#offers" class="cta-button">View Offers</a>
+                <div class="ip-display">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Your IP Address: <span id="ip-address">Loading...</span></span>
+                </div>
             </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Claim Your <span>Exclusive Offers</span> Today</h1>
-            <p>Limited-time opportunities including Amazon jobs, gift cards, cash prizes and more. Don't miss out!</p>
-            
-            <div class="countdown">
-                <h3>OFFERS EXPIRE IN:</h3>
-                <div class="timer" id="countdown">23:59:59</div>
-            </div>
-            
-            <div>
-                <a href="#offers" class="cta-button">See Available Offers</a>
-                <a href="#how-it-works" class="cta-button secondary-button">How It Works</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Offers Section -->
-    <section class="offers" id="offers">
-        <div class="container">
-            <div class="section-title">
-                <h2>Today's Top Offers</h2>
-                <p>Select any offer below to get started</p>
-            </div>
-            
-            <div class="offer-cards">
-                <!-- Amazon Jobs Offer -->
-                <div class="offer-card">
-                    <div class="offer-badge">HOT OFFER</div>
-                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="offer-content">
-                        <h3>Amazon Work From Home Jobs</h3>
-                        <span class="offer-payout">Earn $25-35/hr</span>
-                        <p class="offer-description">Limited openings for remote customer service positions with Amazon. No experience required for some roles.</p>
-                        <a href="https://www.gn3atrk.com/27TN4HML/4QX811T/" class="cta-button">Apply Now</a>
-                    </div>
+    
+    <!-- Announcement Banner -->
+    <div class="container">
+        <div class="announcement-banner" id="course-banner" onclick="redirectToCourse()">
+            <div class="banner-content">
+                <div class="banner-icon">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-                
-                <!-- PrizeStash Offer -->
-                <div class="offer-card">
-                    <div class="offer-badge">NEW</div>
-                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="offer-content">
-                        <h3>  Admevan </h3>
-                        <span class="offer-payout">$500+ Daily Prizes</span>
-                        <p class="offer-description">Claim your free entries to win gift cards, cash prizes and electronics. New winners every hour!</p>
-                        <a href="https://free-content.pro/s?NCS46V3Z" class="cta-button">Play Now</a>
-                    </div>
-                </div>
-
-
-
- <!-- click delar -->
-                <div class="offer-card">
-                    <div class="offer-badge">NEW</div>
-                    <div class="offer-image" style="background-image: url('https://www.google.com/imgres?q=click%20dealer&imgurl=https%3A%2F%2Fhelp.redtrack.io%2Fwp-content%2Fuploads%2F2020%2F09%2Fclickdealer_owler_20160630_081027_original.png&imgrefurl=https%3A%2F%2Fhelp.redtrack.io%2Fknowledgebase%2Fkb%2Fautomation%2Fintegrated-affiliate-networks%2Fclickdealer%2F&docid=5CtJvbHBihqXTM&tbnid=Bs4lNvD-G27JaM&vet=12ahUKEwjGvLOJ6LeMAxUBRmwGHS6jGYkQM3oECB0QAA..i&w=1024&h=344&hcb=2&ved=2ahUKEwjGvLOJ6LeMAxUBRmwGHS6jGYkQM3oECB0QAA');"></div>
-                    <div class="offer-content">
-                        <h3>  Click Delar </h3>
-                        <span class="offer-payout">$500+ Daily Prizes</span>
-                        <p class="offer-description">Claim your free entries to win gift cards, cash prizes and electronics. New winners every hour!</p>
-                        <a href="https://smartdt-secure.com/s?a=266489&sm=48634&co=327602&mt=5&s1=Joel&s2=Joel" class="cta-button">Click Now</a>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-                
-                
-                <!-- Gift Card Offer -->
-                <div class="offer-card">
-                    <div class="offer-badge">POPULAR</div>
-                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="offer-content">
-                        <h3>$500 Walmart Gift Card</h3>
-                        <span class="offer-payout">Free Giveaway</span>
-                        <p class="offer-description">Complete quick survey for chance to win $500 Walmart gift card. New winners selected daily.</p>
-                        <a href="https://squaredownloads.com/1780874" class="cta-button">Claim Entry</a>
-                    </div>
-                </div>
-
-
-
-   <!-- usa dating offers -->
-                <div class="offer-card">
-                    <div class="offer-badge">Meet A New Friends</div>
-                    <div class="offer-image" style="background-image: url('data:image/jpeg;base64,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');"></div>
-                    <div class="offer-content">
-                        <h3>Sign Up And Find Free Your Friends.</h3>
-                        <span class="offer-payout">500+ Daily Signups</span>
-                        <p class="offer-description"> Hurry Up. Sign Up and Find Your Friend.</p>
-                        <a href="https://fe63ef.svbasmnckaw.cc/?target=-7EBNQCgQAAAdMHQQDj4kABQEBEREKEQkKEQ1CEQ0SAAF_YWRjb21ibwEx" class="cta-button">Sign Up Now</a>
-                    </div>
-                </div>
-                
-                
-                <!-- Additional Offer -->
-                <div class="offer-card">
-                    <div class="offer-badge">LIMITED</div>
-                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
-                    <div class="offer-content">
-                        <h3>Free iPhone 15 Pro</h3>
-                        <span class="offer-payout">Valued at $999</span>
-                        <p class="offer-description">Special promotion giving away 10 iPhone 15 Pro devices this week. No purchase necessary.</p>
-                        <a href="https://squaredownloads.com/1772773" class="cta-button">Enter Now</a>
-                    </div>
+                <div class="banner-text">
+                    LIMITED TIME: Enroll in our <span>How Success Affiliate Marketing Full Course</span> and boost your earnings today!
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>Real people getting real results</p>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <div class="main-title">
+            <h1>Premium Affiliate Offers</h1>
+            <p>Discover the best affiliate programs to maximize your earnings. Join thousands of successful marketers who trust our recommendations.</p>
+        </div>
+        
+        <div class="offers-grid">
+            <!-- Amazon Job Offers -->
+            <div class="offer-card">
+                <div class="offer-badge">HOT</div>
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Amazon Job Offers">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-category">Jobs</span>
+                    <h3 class="offer-title">Amazon Job Offers</h3>
+                    <p class="offer-description">Earn commissions by referring qualified candidates to Amazon's open positions worldwide.</p>
+                    <div class="offer-stats">
+                        <div class="offer-stat"><i class="fas fa-dollar-sign"></i> $50-200 per hire</div>
+                        <div class="offer-stat"><i class="fas fa-clock"></i> 60 day cookie</div>
+                    </div>
+                    <a href="https://www.gn3atrk.com/27TN4HML/4QX811T/" class="offer-button" target="_blank">Apply Now </a>
+                </div>
             </div>
             
-            <div class="testimonial-cards">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">I got approved for the Amazon work from home job in just 3 days! Now I'm making $28/hour while taking care of my kids at home. Life changing!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/44.jpg');"></div>
-                        <div class="author-info">
-                            <h4>Sarah M.</h4>
-                            <p>Amazon CSR, Texas</p>
-                        </div>
-                    </div>
+            <!-- Meet A Friend (Dating Offers) -->
+            <div class="offer-card">
+                <div class="offer-badge">POPULAR</div>
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Meet A Friend Dating">
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">I was skeptical at first but I actually won a $250 Amazon gift card on my second try with PrizeStash. Already used it for Christmas shopping!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
-                        <div class="author-info">
-                            <h4>James L.</h4>
-                            <p>Winner, Ohio</p>
-                        </div>
+                <div class="offer-content">
+                    <span class="offer-category">Dating</span>
+                    <h3 class="offer-title">Meet A Friend</h3>
+                    <p class="offer-description">High-converting dating offers with premium payouts for every successful registration.</p>
+                    <div class="offer-stats">
+                        <div class="offer-stat"><i class="fas fa-dollar-sign"></i> $1.50-5.00 per lead</div>
+                        <div class="offer-stat"><i class="fas fa-clock"></i> 30 day cookie</div>
                     </div>
+                    <a href="https://fe63ef.svbasmnckaw.cc/?target=-7EBNQCgQAAAdMHQQDj4kABQEBEREKEQkKEQ1CEQ0SAAF_YWRjb21ibwEx" class="offer-button" target="_blank">Sign Up Now ( Free )</a>
                 </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">The application process was so simple. Within a week I had interview requests from 3 different Amazon departments. Start next Monday!</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/68.jpg');"></div>
-                        <div class="author-info">
-                            <h4>Danielle R.</h4>
-                            <p>New Hire, Florida</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="steps" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: white;">How It Works</h2>
-                <p style="color: #ccc;">Simple steps to claim your offer</p>
             </div>
             
-            <div class="step-cards">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Choose Your Offer</h3>
-                    <p>Select from our verified offers above</p>
+            <!-- Price Stash Offer -->
+            <div class="offer-card">
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Price Stash">
                 </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Complete Simple Steps</h3>
-                    <p>Follow the easy application process</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Get Approved</h3>
-                    <p>Receive confirmation within 24-48 hours</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h3>Start Earning</h3>
-                    <p>Begin working or claim your prize</p>
+                <div class="offer-content">
+                    <span class="offer-category">Finance</span>
+                    <h3 class="offer-title">Price Stash</h3>
+                    <p class="offer-description">Revolutionary price tracking tool that helps users save money on online purchases.</p>
+                    <div class="offer-stats">
+                        <div class="offer-stat"><i class="fas fa-dollar-sign"></i> 30% recurring</div>
+                        <div class="offer-stat"><i class="fas fa-clock"></i> 90 day cookie</div>
+                    </div>
+                    <a href="https://www.gn3atrk.com/27TN4HML/35KJ2D9J/" class="offer-button" target="_blank">Claim Your Offer Now</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
+
+
+
+
+
+
+  <!-- Lost Weight Offer -->
+            <div class="offer-card">
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Price Stash">
+                </div>
+                <div class="offer-content">
+                    <span class="offer-category">Fitness</span>
+                    <h3 class="offer-title">Lost Weight</h3>
+                    <p class="offer-description">This Book Is Help you for Lost your Weght and Mainatance your fitness.</p>
+                    <div class="offer-stats">
+                        <div class="offer-stat"><i class="fas fa-dollar-sign"></i> Totally Free</div>
+                        <div class="offer-stat"><i class="fas fa-clock"></i> 30 day result</div>
+                    </div>
+                    <a href="https://squaredownloads.com/1772773" class="offer-button" target="_blank">Download Now</a>
+                </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
-            <div class="faq-items">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Are these offers really free?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! All offers shown are completely free to apply for. Some may require you to complete a simple survey or sign up for a free account, but there are no hidden costs.</p>
-                    </div>
+            <!-- YouTube Ranker -->
+            <div class="offer-card">
+                <div class="offer-badge">NEW</div>
+                <div class="offer-image">
+                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="YouTube Ranker">
                 </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How quickly can I start the Amazon job?</span>
-                        <span>+</span>
+                <div class="offer-content">
+                    <span class="offer-category">SMM Pannel Services</span>
+                    <h3 class="offer-title">YouTube Ranker</h3>
+                    <p class="offer-description">Premium SMM panel services to boost YouTube views, likes, and subscribers with high retention.</p>
+                    <div class="offer-stats">
+                        <div class="offer-stat"><i class="fas fa-dollar-sign"></i> 20% commission</div>
+                        <div class="offer-stat"><i class="fas fa-clock"></i> Lifetime cookie</div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Most applicants receive a response within 3 business days. The hiring process typically takes 1-2 weeks from application to start date depending on position availability.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What are my chances of winning prizes?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our partners select new winners daily. While we can't guarantee everyone will win, your chances increase with each additional entry you qualify for.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is my personal information secure?</span>
-                        <span>+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. We only work with trusted partners who comply with all data protection regulations. Your information is never sold to third parties.</p>
-                    </div>
+                    <a href="https://squaredownloads.com/1780874" class="offer-button" target="_blank">Start Your Boosting</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="steps" style="background-color: #FF9900; color: #232f3e; padding: 2rem 0;">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 1rem;">Don't Miss These Limited-Time Offers</h2>
-            <p style="margin-bottom: 1.5rem; color: #232f3e; font-weight: bold;">Click below to claim your preferred offer before time runs out!</p>
-            <a href="#offers" class="cta-button" style="background-color: #232f3e; color: white;">View All Offers Now</a>
-        </div>
-    </section>
-
+    </main>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-links">
-                <a href="#">Home</a>
-                <a href="#offers">Offers</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms</a>
-                <a href="#">Contact</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Loot Links</h3>
+                    <p>Your trusted source for premium affiliate programs and marketing resources.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Affiliate Programs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                &copy; 2023 LinkLoot. All rights reserved. This is not an official Amazon website.
+            <div class="footer-bottom">
+                <p>&copy; 2023 AffiliateProfitHub. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
+    
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date();
-            const midnight = new Date();
-            midnight.setHours(24, 0, 0, 0);
-            
-            const diff = midnight - now;
-            
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown').textContent = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // Get and display user's IP address
+        async function fetchIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                document.getElementById('ip-address').textContent = data.ip;
+            } catch (error) {
+                document.getElementById('ip-address').textContent = 'Not available';
+            }
         }
         
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        // Redirect to affiliate course
+        function redirectToCourse() {
+            // Replace with your custom URL for the course
+            window.location.href = "https://free-content.pro/s?NCS46V3Z";
+        }
         
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isOpen = answer.classList.contains('show');
-                
-                // Close all answers first
-                document.querySelectorAll('.faq-answer').forEach(ans => {
-                    ans.classList.remove('show');
+        // Initialize functions when page loads
+        window.onload = function() {
+            fetchIP();
+            
+            // Add click event to all offer buttons for tracking
+            document.querySelectorAll('.offer-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // You can add tracking code here
+                    console.log('Offer clicked: ', this.href);
                 });
-                
-                // Toggle this one if it wasn't open
-                if (!isOpen) {
-                    answer.classList.add('show');
-                }
             });
-        });
+        };
     </script>
 </body>
 </html>
