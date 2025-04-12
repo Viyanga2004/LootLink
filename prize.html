@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prize Stash | Offer Colection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #ffffff;
+            --light-bg: #f8f9fa;
+            --text: #2b2d42;
+            --text-light: #8d99ae;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .offer-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .offer-image-container {
+            flex: 1;
+            min-width: 350px;
+            perspective: 1000px;
+        }
+        
+        .offer-image-card {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            transform-style: preserve-3d;
+            transition: all 0.8s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: white;
+        }
+        
+        .offer-image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .offer-image-frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 15px solid white;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+        
+        .offer-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .offer-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--accent), #ff6b6b);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .offer-details {
+            flex: 1;
+            min-width: 350px;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .select-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .select-container::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            pointer-events: none;
+        }
+        
+        select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            color: var(--text);
+            appearance: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        select option {
+            background: white;
+            color: var(--text);
+        }
+        
+        .link-container {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .link-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .affiliate-link {
+            display: block;
+            word-break: break-all;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            border: 1px dashed #e9ecef;
+        }
+        
+        .affiliate-link:hover {
+            color: var(--secondary);
+            background: #f8f9fa;
+            border-color: var(--primary);
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(67, 97, 238, 0.4);
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+            border-color: var(--primary);
+        }
+        
+        .offer-description {
+            margin-top: 2rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 150px;
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background: #f1f3f5;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            color: var(--text);
+        }
+        
+        .feature-text {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .offer-container {
+                flex-direction: column;
+            }
+            
+            .offer-image-container, .offer-details {
+                min-width: 100%;
+            }
+            
+            .btn {
+                min-width: 100%;
+            }
+        }
+        
+        /* Ribbon effect */
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        
+        .ribbon::before,
+        .ribbon::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            border: 5px solid var(--primary);
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+        
+        .ribbon::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .ribbon::after {
+            width: 90%;
+            height: 90%;
+            border-width: 3px;
+        }
+        
+        .ribbon-text {
+            position: absolute;
+            display: block;
+            width: 200px;
+            padding: 0.5rem 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            right: -50px;
+            top: 30px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="ribbon">
+                <span class="ribbon-text">Exclusive Offers</span>
+            </div>
+            <h1 class="logo">PRIZE STASH</h1>
+            <p class="tagline">Unlock Premium Rewards & Exclusive Deals</p>
+        </header>
+        
+        <div class="offer-container">
+            <div class="offer-image-container">
+                <div class="offer-image-card">
+                    <div class="offer-image-frame">
+                        <img id="offerImage" class="offer-image" src="prize\offer.png" alt="Selected Offer">
+                        <div class="badge">HOT DEAL</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="offer-details">
+                <div class="select-container">
+                    <select id="offerSelect" onchange="updateOffer()">
+                        <option value="">-- Select Your Premium Offer --</option>
+
+                        <option value="184" data-image="prize\ebike.png" data-link="https://nx2bs.com/c?o=187&a=11822"> Prize Stash - Ebike ($100)</option>
+
+                        <option value="186" data-image="monster.png" data-link="https://nx2bs.com/c?o=184&a=11822"> Prize Stash - Monster Energy Drink ($100)</option>
+
+                        <option value="187" data-image="prize\grocery.png" data-link="https://nx2bs.com/c?o=186&a=11822">Prize Stash - Samples Alberton's Grocery ($100)</option>
+
+                        <option value="188" data-image="prize\costco.png" data-link="https://nx2bs.com/c?o=191&a=11822">Prize Stash - Costco ($250)</option>
+
+                        <option value="189" data-image="prize\body.png" data-link="https://nx2bs.com/c?o=189&a=11822">Prizestash - Samples - Bath & Body Works $1000 v3</option>
+
+                        <option value="190" data-image="prize\chick.png" data-link="https://nx2bs.com/c?o=188&a=11822">Prize Stash - Samples Chick Fil A ($250)</option>
+
+                        <option value="191" data-image="prize\ikea.png" data-link="https://nx2bs.com/c?o=190&a=11822">Prize Stash - Ikea $1000</option>
+
+                        <option value="192" data-image="prize\amazon.png" data-link="https://nx2bs.com/c?o=193&a=11822">Prize Stash - Samples Amazon Prime ($500)</option>
+
+                        <option value="193" data-image="prize\walmart.png" data-link="https://nx2bs.com/c?o=194&a=11822">Prizestash - Walmart $500</option>
+
+                        <option value="194" data-image="prize\ebay.jpeg" data-link="https://nx2bs.com/c?o=195&a=11822">Prize Stash - Samples Ebay $1000</option>
+
+                        <option value="195" data-image="prize\ama.png" data-link="https://nx2bs.com/c?o=192&a=11822">Prize Stash - Amazon $1000</option>
+
+                        <option value="196" data-image="prize\cashapp.png" data-link="https://nx2bs.com/c?o=196&a=11822">Prizestash - Cashapp $750</option>
+
+                    </select>
+                </div>
+                
+                <div class="link-container">
+                    <span class="link-label">YOUR EXCLUSIVE AFFILIATE LINK:</span>
+                    <div id="affiliateLinkContainer" class="affiliate-link">
+                        Please select an offer to view your premium link
+                    </div>
+                </div>
+                
+                <div class="btn-group">
+                    <a id="visitButton" href="#" class="btn btn-primary" style="display: none;">
+                        <i class="fas fa-gem"></i> Claim Offer
+                    </a>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-share-alt"></i> Share Deal
+                    </button>
+                </div>
+                
+                <div class="offer-description" id="offerDescription">
+                    Select one of our premium offers from the dropdown above to reveal your exclusive affiliate link and special deal details.
+                </div>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <div class="feature-title">Instant Access</div>
+                        <div class="feature-text">Immediate claim process</div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="feature-title">Verified</div>
+                        <div class="feature-text">100% legitimate offers</div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <div class="feature-title">Premium</div>
+                        <div class="feature-text">Exclusive deals</div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <div class="feature-title">Limited Time</div>
+                        <div class="feature-text">Act fast!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Loot Links. All rights reserved. | <a href="#" style="color: var(--primary); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--primary); text-decoration: none;">Terms of Service</a></p>
+        </footer>
+    </div>
+
+    <script>
+        function updateOffer() {
+            const select = document.getElementById('offerSelect');
+            const selectedOption = select.options[select.selectedIndex];
+            const image = document.getElementById('offerImage');
+            const linkContainer = document.getElementById('affiliateLinkContainer');
+            const visitButton = document.getElementById('visitButton');
+            
+            if (selectedOption.value) {
+                // Update image
+                image.src = selectedOption.getAttribute('data-image');
+                image.alt = selectedOption.text;
+                
+                // Update affiliate link
+                const affiliateLink = selectedOption.getAttribute('data-link');
+                linkContainer.innerHTML = `<a href="${affiliateLink}" target="_blank" style="color: var(--primary); text-decoration: none;">${affiliateLink}</a>`;
+                
+                // Update visit button
+                visitButton.href = affiliateLink;
+                visitButton.style.display = 'flex';
+                
+                // Update description
+                document.getElementById('offerDescription').textContent = 
+                    `You've selected our premium ${selectedOption.text} offer. Click the link above or the "Claim Offer" button to access this exclusive deal through our verified affiliate link. Limited quantities available!`;
+            } else {
+                // Reset to default state
+                image.src = "https://via.placeholder.com/500x300/ffffff/4361ee?text=Select+an+Offer";
+                image.alt = "Selected Offer";
+                linkContainer.textContent = "Please select an offer to view your premium link";
+                visitButton.style.display = 'none';
+                document.getElementById('offerDescription').textContent = 
+                    "Select one of our premium offers from the dropdown above to reveal your exclusive affiliate link and special deal details.";
+            }
+        }
+        
+        // Add animation to the offer card on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const offerCard = document.querySelector('.offer-image-card');
+            setTimeout(() => {
+                offerCard.style.transform = 'translateY(0) rotateY(0deg)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
